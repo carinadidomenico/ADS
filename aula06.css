@@ -1,0 +1,9 @@
+.conteudo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.caixa {
+    width: 30vw;
+    height: 30vw;
+}
