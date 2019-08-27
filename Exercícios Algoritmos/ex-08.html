@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 08</title>
+</head>
+<body>
+    <div>
+        <label for="">Qual o valor da passagem?</label>
+        <input id="valor__passagem" type="number">
+    </div>
+    <div>
+        <label for="">Quantas viagens fará por mês?</label>
+        <input id="viagens" type="number">
+    </div>
+    <button>Ver economia</button>
+</body>
+<script>
+        let btn = document.querySelector("button");
+
+    btn.addEventListener ('click', function (){
+        let inputValor = document.querySelector("#valor__passagem");
+        let inputViagem = document.querySelector("#viagens");
+        let valorEconomia = (inputValor.value * inputViagem.value)/2;
+        console.log (valorEconomia.toFixed(2));
+    })
+
+</script>
+</html>
