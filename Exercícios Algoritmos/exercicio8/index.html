@@ -9,11 +9,11 @@
 <body>
     <div>
         <label for="">Qual o valor da passagem?</label>
-        <input id="valor__passagem" type="text">
+        <input id="valor__passagem" type="number">
     </div>
     <div>
         <label for="">Quantas viagens fará por mês?</label>
-        <input id="viagens" type="text">
+        <input id="viagens" type="number">
     </div>
     <button>Ver economia</button>
 </body>
@@ -24,7 +24,7 @@
         let inputValor = document.querySelector("#valor__passagem");
         let inputViagem = document.querySelector("#viagens");
         let valorEconomia = (inputValor.value * inputViagem.value)/2;
-        console.log (valorEconomia);
+        console.log (valorEconomia.toFixed(2));
     })
 
 </script>
