@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Exercício 10</title>
 </head>
 <body>
     <div>
         <label for="">Qual o nome d@ guereir@ Sayajin?</label>
-        <input id="nome__guerreiro" type="text">
+        <input id="nome__guerreiro" type="text" autofocus>
     </div>
     <div>
         <label for="">Qual o KI normal d@ guerreir@ Sayajin?</label>
@@ -24,12 +25,12 @@
     button.addEventListener ('click', function VerKi (){
         let nomeGuerreiro = document.querySelector("#nome__guerreiro").value;
         let kiNormal = document.querySelector("#ki__normal").value;
-        document.querySelector("#ki").innerHTML = 
-        `<ul>
-            <li>O ki normal do ${nomeGuerreiro} é ${kiNormal}</li>
-            <li>Na forma Super Sayajin o ki do ${nomeGuerreiro} é ${kiNormal*50}</li>
-            <li>Na forma Super SAyajin 2, 0 ki do ${nomeGuerreiro} é ${kiNormal*100}</li>
-        </ul>`
+        document.querySelector("#ki").innerHTML =
+        `<div>
+            <p>O ki normal do ${nomeGuerreiro} é ${kiNormal}</p>
+            <p>Na forma <b>Super Sayajin</b> o ki do ${nomeGuerreiro} é ${kiNormal*50}</p>
+            <p>Na forma <b>Super Sayajin 2</b> o ki do ${nomeGuerreiro} é ${kiNormal*100}</p>
+        </div>`
     })
 </script>
 </html>
