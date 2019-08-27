@@ -16,6 +16,7 @@
         <input id="viagens" type="number">
     </div>
     <button>Ver economia</button>
+    <p></p>
 </body>
 <script>
         let btn = document.querySelector("button");
@@ -25,6 +26,7 @@
         let inputViagem = document.querySelector("#viagens");
         let valorEconomia = (inputValor.value * inputViagem.value)/2;
         console.log (valorEconomia.toFixed(2));
+        document.querySelector("p").innerHTML = valorEconomia.toFixed(2);    
     })
 
 </script>
