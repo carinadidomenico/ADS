@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        button {
+            padding: 5px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Primeiro número:
+            <input id="num1" type="number">
+        </label>
+    </div>
+    <div>
+        <label for="">Segundo número:
+            <input id="num2" type="number">
+        </label>
+    </div>
+    <div>
+        <button onclick="soma()">soma</button>
+        <button onclick="sub()">subtração</button>
+        <button onclick="mult()">multiplicação</button>
+        <button onclick="div()">divisão</button>
+    </div>
+    <div>
+        <p id="resultado"></p>
+    </div>
+</div>
+</body>
+<script>
+    function soma() {
+        resultado.innerHTML = Number(num1.value) + Number(num2.value);
+    }
+
+    function sub() {
+        resultado.innerHTML = Number(num1.value) - Number(num2.value);
+    }
+
+    function mult() {
+        resultado.innerHTML = Number(num1.value) * Number(num2.value);
+    }
+
+    function div() {
+        resultado.innerHTML = Number(num1.value) / Number(num2.value);
+    }
+</script>
+</html>

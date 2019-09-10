@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Atalhos matemáticos</h1>
+    <div>
+        <label for="">Digite um número qualquer
+            <input id="numero" type="text">
+        </label>
+        <div>
+            <button onclick="atalhos()">Executar atalhos</button>
+        </div>
+    </div>
+</body>
+<script>
+    function atalhos() {
+        var valor = Number(numero.value);
+
+        // potência
+        var quadrado = valor ** 2;
+        var cubo = valor ** 3;
+        console.log (`${valor} ao quadrado: ${quadrado}`);
+        console.log (`${valor} ao cubo: ${cubo}`);
+
+        // incrementando 1
+        valor ++;
+        console.log(`Após o incremento: ${valor}`);
+
+        // reduzindo 1
+        valor --;
+        console.log (`Após a redução: ${valor}`);
+
+        // somar com ele próprio
+        valor += 20;
+        console.log (`Somado com 20: ${valor}`);
+
+        // subtrair dele próprio
+        valor -= 5;
+        console.log (`Tirando 5: ${valor}`);
+
+        // multiplicar com ele próprio
+        valor *= 2;
+        console.log (`Multiplicando por 2: ${valor}`);
+
+        // dividir dele próprio
+        valor /= 10;
+        console.log (`Dividindo por 10: ${valor}`);
+    }
+</script>
+</html>
