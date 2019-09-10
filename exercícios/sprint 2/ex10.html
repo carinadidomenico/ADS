@@ -7,6 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <label for="">Salário:
+            <input id="inputSalario" type="text">
+        </label>
+    </div>
+    <div>
+        <label for="">Mesada do filho:
+            <input id="inputMesada" type="text">
+        </label>
+    </div>
+    <div>
+        <label for="">Abono de Natal:
+            <input id="inputAbono" type="text">
+        </label>
+    </div>
+    <div>
+        <button onclick="calcularSaldo()">Calcular Saldo</button>
+    </div>
 </body>
+<script>
+    function calcularSaldo() {
+        var salario = Number(inputSalario.value);
+        var mesada = Number(inputMesada.value);
+        var abono = Number(inputAbono.value);
+        salario -= mesada;
+        salario +- abono;
+        console.log(Number(salario));
+    }
+</script>
 </html>
+
+<!-- 10. Crie um programa em HTML/JS no qual:
+a) Solicite o valor do salário do usuário
+b) Solicite o valor da mesada de seu filho
+c) Solicite o valor do abono de Natal
+d) Ao clicar em "Calcular saldo", calcule o saldo de seu salário que é seu salário menos a mesada mais o abono de Natal. Exiba o saldo num alerta. -->

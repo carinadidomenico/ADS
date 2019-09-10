@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Digite os catetos:
+            <input id="cateto1" type="text">
+            <input id="cateto2" type="text">
+        </label>
+    </div>
+    <div>
+        <button onclick="calcularHipotenusa()">Calcular hipotenusa</button>
+    </div>
+</body>
+<script>
+    function calcularHipotenusa() {
+        var cat1 = Number(cateto1.value);
+        var cat2 = Number(cateto2.value);
+        var h = (cat1 ** 2 * cat2 ** 2);
+        console.log (h);
+    }
+</script>
+</html>
+
+<!-- 11. Crie um programa em HTML/JS no qual:
+a) Solicite o valor dos 2 catetos de um triângulo retângulo
+b) Calcule e exiba o valor da hipotenusa num alert -->
