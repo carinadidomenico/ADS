@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="valor_total"></p>
+        <p id="deposito_total"></p>
+    </div>
+    <div>
+        <button onclick="deposito50()">Depositar R$0,50</button>
+        <button onclick="deposito2()">Depositar R$2,00</button>
+    </div>
+</body>
+<script>
+    var cofrinho = 0;
+    var depositos = 0;
+    console.log(cofrinho);
+    valor_total.innerHTML = `Total guardado no cofrinho: R$${cofrinho.toFixed(2)}`;
+    deposito_total.innerHTML = `Depósitos efetuados: ${depositos}`;
+    
+    function deposito50() {
+        cofrinho += 0.50;
+        depositos += 1;
+        console.log(cofrinho);
+        valor_total.innerHTML = `Total guardado no cofrinho: R$${cofrinho.toFixed(2)}`;
+        deposito_total.innerHTML = `Depósitos efetuados: ${depositos}`;
+    }
+    
+    function deposito2() {
+        cofrinho += 2;
+        depositos += 1;
+        console.log(cofrinho);
+        valor_total.innerHTML = `Total guardado no cofrinho: R$${cofrinho.toFixed(2)}`;
+        deposito_total.innerHTML = `Depósitos efetuados: ${depositos}`;        
+    }
+
+</script>
+</html>
+
+<!-- 15. Tio Patinhas está ensinando seus netos a guardar dinheiro. Ajude ele criando um programa em HTML/JS o qual:
+a) Exiba na tela, logo de início, na cor azul:
+Total guardado no cofrinho: R$0.00
+Depósitos efetuados: 0
+
+b) Ao clicar num botão "Depositar 0,50", o valor depositado aumente em R$0,50 e a quantidade de depósitos aumente em 1. Atualize essas informações na tela;
+
+c) Ao clicar num botão "Depositar 2,00", o valor depositado aumente em R$2,00 e a quantidade de depósitos aumente em 1. Atualize essas informações na tela -->

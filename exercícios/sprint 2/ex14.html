@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Qual o salário?
+        <input id="input_salario" type="text" autofocus>
+        <button id="confirmar_salario" onclick="confirmarSalario()">Confirmar salário</button>
+    </label>
+    <div>
+        <p id="resposta"></p>
+    </div>
+    <div>
+        <button id="conta100" onclick="conta100()">Pagar conta de R$100 </button>
+        <button id="conta500" onclick="conta500()">Pagar conta de R$500</button>
+        <button id="loteria" onclick="loteria2000()">Ganhar R$2000 na loteria</button>
+    </div>
+</body>
+<script>
+    var salario = 0;
+    console.log(salario);
+        
+    function confirmarSalario() {
+        salario = Number(input_salario.value);
+        console.log(salario);
+        resposta.innerHTML = `Grana atual: R$${salario.toFixed(2)}`
+    }
+
+    function conta100() {
+        salario -= 100;
+        resposta.innerHTML = `Grana atual: R$${salario.toFixed(2)}`
+    }
+
+    function conta500() {
+        salario -= 500;
+        resposta.innerHTML = `Grana atual: R$${salario.toFixed(2)}`
+    }
+
+    function loteria2000() {
+        salario += 2000;
+        resposta.innerHTML = `Grana atual: R$${salario.toFixed(2)}`
+    }
+
+</script>
+</html>
+
+<!-- 14. Crie um programa em HTML/JS o qual:
+a) Pergunte qual o salário do usuário
+
+b) Tenha um botão "Confirmar salário". Ao ser clicado, ele deixe aparecendo na tela uma frase assim "Grana atual: R$X.XX"
+
+c) Tenha um botão "Pagar conta de 100", que, ao ser clicado, ele reduza a "Grana atual" em 100 e atualize essa informação na tela
+
+d) Tenha um botão "Pagar conta de 500", que, ao ser clicado, ele reduza a "Grana atual" em 500 e atualize essa informação na tela
+
+e) Tenha um botão "Ganhar 2000 na loteria", que, ao ser clicado, ele aumente a "Grana atual" em 2000 e atualize essa informação na tela -->
