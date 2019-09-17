@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lista suspensa ou "combo box"</p>
+    <select id="doces">
+        <option> - Escolha um doce - </option>
+        <option value="5.50">Chocolate</option>
+        <option value="10">Pudim</option>
+        <option value="50">Bolo</option>
+        <option value="5">Alfajor</option>
+    </select>
+    <button onclick="verValor()">Ver Valor</button>
+    <p id="valor"></p>
+</body>
+<script>
+    function verValor(){
+        var doce = Number(doces.value)
+        valor.innerHTML = `R$${doce.toFixed(2)}`
+    }
+</script>
+</html>
