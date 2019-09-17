@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="width: max-content; height: max-content;background-image: url('https://images7.alphacoders.com/333/333217.jpg');background-size: cover;">
+    <div>
+        <button onclick="moverDireita()">direita</button>
+        <button onclick="moverEsquerda()">esquerda</button>
+        <button onclick="moverCima()">cima</button>
+        <button onclick="moverBaixo()">baixo</button>
+        <label for="" style="color: white;"><b>Quantos pixels?</b>
+            <input id="input_pixel" type="text">
+        </label>
+    </div>
+    <div id="mariobg" style="height: 90vh;display: flex;justify-content: normal;align-items: flex-end;">
+        <img id="mario" src="mario.gif" style=" margin-bottom:40px;width: 100px;" alt="">
+    </div>
+<script>
+    var pixelLeft = 0;
+    var pixelBottom = 0
+    function moverEsquerda(){
+        pixelLeft += Number(input_pixel.value);
+        mario.style.marginLeft = `${pixelLeft}px`;
+    }
+
+    function moverDireita(){
+        pixelLeft -= Number(input_pixel.value);
+        mario.style.marginLeft = `${pixelLeft}px`;
+    }
+
+    function moverCima(){
+        pixelBottom += Number(input_pixel.value);
+        mario.style.marginBottom = `${pixelBottom}px`;
+    }
+
+    function moverBaixo(){
+        pixelBottom -= Number(input_pixel.value);
+        mario.style.marginBottom = `${pixelBottom}px`;
+    }
+</script>
+
+</body>
+</html>
