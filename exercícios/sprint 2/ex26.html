@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Total guardado: <b id="total">0</b></p>
+        <p>Operações efetuadas: <b id="operacoes">0</b></p>
+    </div>
+    <div>
+        <select id="valores">
+            <option value="0.25">Depositar $0,25</option>
+            <option value="0.50">Depositar R$0,50</option>
+            <option value="1.00">Depositar R$1,00</option>
+            <option value="2.00">Depositar R$2,00</option>
+            <option value="-1.00">Tirar R$1,00</option>
+            <option value="-2.00">Tirar R$2,00</option>
+        </select>
+        <button onclick="confirmarOperacao()">Confirmar operações</button>
+    </div>
+</body>
+<script>
+    var valor = 0;
+    var incrementoOperacoes = 0;
+    function confirmarOperacao() {
+        valor+= Number(valores.value);
+        total.innerHTML = valor;
+        operacoes.innerHTML = ++incrementoOperacoes;
+    }
+</script>
+</html>
+
+<!-- 26. Crie um pequeno "cofrinho" em HTML/JS o qual:
+a) Tenha o seguinte texto, logo de inicio:
+Total guardado: R$0.00
+Operações efetuadas: 0
+b) Tenha uma "combo" com os itens:
+    Depositar R$0,25
+    Depositar R$0,50
+    Depositar R$1,00
+    Depositar R$2,00
+    Tirar R$1,00
+    Tirar R$2,00
+c) Ao clicar num botão "Confirmar operação", o valor depositado aumenta ou diminui, conforme a descrição do item selecionado na 'combo'. Os valores de 'operações' aumentam sempre em 1. -->

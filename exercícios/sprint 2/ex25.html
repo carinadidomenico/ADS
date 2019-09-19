@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img id="gato" src="http://placekitten.com/300/300" alt="Três gatinhos">
+    </div>
+    <div>
+        <select id="tamanhos">
+            <option value="-100">Minúsculo</option>
+            <option value="-50">Pequeno</option>
+            <option value="0">Normal</option>
+            <option value="+50">Grande</option>
+            <option value="+100">Enorme</option>
+        </select>
+        <button onclick="redimensionar()">Redimensionar imagem</button>
+    </div>
+</body>
+<script>
+    function redimensionar() {
+        var altura = 300 +Number(tamanhos.value);
+        gato.style.height = `${altura}px`
+    }
+</script>
+</html>
+
+<!-- 25. Crie um programa em HTML/JS que:
+a) Tenha no topo uma foto qualquer. Verifique qual sua altura, em px (só verifique e deixe esse valor anotado em algum lugar, como no seu caderno, por exemplo)
+b) Abaixo da foto, uma "combo" com as opções
+   Normal
+   Grande
+   Enorme
+   Pequeno
+   Minúsculo
+c) Ao clicar num botão "Redimensionar imagem", a foto deve mudar de altura, conforme estas regras:
+Normal: altura original (aquela que você anotou no inicio)
+Grande: altura original + 50px  
+Enorme: altura original + 300px 
+Pequeno: altura original - 50px 
+Minúsculo: altura original - 100px   -->
