@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Times de São Paulo</h2>
+    </div>
+    <div>
+        <select id="times">
+            <option value=""> - Escolha um time - </option>
+            <option value="https://imagepng.org/wp-content/uploads/2018/03/escudo-palmeiras-1.png">Palmeiras</option>
+            <option value="https://logodownload.org/wp-content/uploads/2017/02/santos-logo-escudo-1.png">Santos</option>
+            <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/481px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png">São Paulo</option>
+            <option value="https://dreamleaguesoccer.com.br/wp-content/uploads/2016/11/escudo-Corinthians.png">Curintia</option>
+        </select>
+        <button onclick="verEscudo()">Ver escudo</button>
+    </div>
+    <div>
+        <img style="width: 300px;height: 300px;" id="escudo" src="" alt="">
+    </div>
+</body>
+<script>
+    function verEscudo() {
+        escudo.src = times.value;
+    }
+</script>
+</html>
+
+<!-- 22. Crie um programa em HTML/JS o qual:
+a) Tenha uma "combo" com os nomes dos 4 grandes times de São Paulo
+b) Ao clicar num botão "Ver escudo", abaixo da combo deve aparecer o escudo (ou uma zueira) do time selecionado  -->

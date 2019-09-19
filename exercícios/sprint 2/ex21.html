@@ -11,6 +11,7 @@
         <h2>Oração pela paz</h2>
     </div>
     <div>
+        <span>"Onde há</span>
         <select id="palavras">
             <option value=""> - Escolha uma opção - </option>
             <option value="perdão">ofensa</option>
@@ -18,13 +19,13 @@
             <option value="luz">trevas</option>
             <option value="união">discórdia</option>
         </select>
-        <button onclick="fazerOracao()">Fazer oração</button>
+        <span id="oracao"></span>
     </div>
-    <p id="oracao"></p>
+    <button onclick="fazerOracao()">Fazer oração</button>
 </body>
 <script>
     function fazerOracao() {
-        oracao.innerHTML = `Onde há ${palavras.textContent.value}, que eu leve ${palavras.value}.`
+        oracao.innerHTML = `que eu leve ${palavras.value}."`
     }
 </script>
 </html>

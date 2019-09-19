@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Como está meu atendimento?</h2>
+    </div>
+    <div>
+        <select id="estrelas">
+            <option value="1">1 estrela</option>
+            <option value="2">2 estrelas</option>
+            <option value="3">3 estrelas</option>
+            <option value="4">4 estrelas</option>
+            <option value="5">5 estrelas</option>
+        </select>
+        <button onclick="confirmar()">Confirmar avaliação</button>
+    </div>
+    <div>
+        <p id="mediaAvaliacoes">Média de avaliação: 0</p>
+        <p id="numeroAvaliacoes">Número de avaliações: 0</p>
+    </div>
+</body>
+<script>
+    var media = 0;
+    var avaliacoes = 0;
+    
+    function confirmar() {
+        avaliacoes++;
+        media += Number(estrelas.value);
+        mediaAvaliacoes.innerHTML = `Média de avaliações: ${(media/avaliacoes).toFixed(1)}`
+        numeroAvaliacoes.innerHTML = `Número de avaliações: ${avaliacoes}`
+    }
+</script>
+</html>
+
+<!-- 23 (desafio). Crie um mini sistema de avaliação de atendimento em HTML/JS o qual:
+a) Mostre a frase, em letras grande, "Como está meu atendimento?"
+b) Tenha uma 'combo' com os itens 
+    1 estrela
+    2 estrelas
+    3 estrelas
+    4 estrelas
+    5 estrelas
+c) Abaixo da 'combo', o seguinte texto:
+    Média atual: 0 estrelas
+    Número de avaliações: 0
+d) Ao clicar num botão "Confirmar avaliação", o programa pega o valor da avaliação e atualiza os valores de média e número de avaliações do item c). A regra é que o 1º item da combo vale 1, o 2º vale 2 e assim por diante.   -->
