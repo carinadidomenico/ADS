@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estruturas de decisão</title>
+</head>
+<body>
+    <h3>Estrutura de decisão</h3>
+    <div>
+        <label>Quanto pagou de multa na viagem?
+            <input id="multa" type="text">
+        </label>
+        <button onclick="viagem()">Ver viagem</button>
+    </div>
+</body>
+<script>
+    function viagem() {
+        var valor_multa = Number(multa.value);
+
+        // SE o valor multa for maior que 0
+        if(valor_multa > 0) {
+            console.log(`Você pagou multa de R$${valor_multa}`);
+        }
+        console.log("Boa viagem!");
+    }
+</script>
+</html>
