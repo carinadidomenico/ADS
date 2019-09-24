@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Quantidade de filhos
+            <input type="text" id="inputFilhos">
+        </label>
+        <button onclick="analisar()">Analisar família</button>
+    </div>
+    <div id="resposta">
+    </div>
+</body>
+<script>
+    function analisar() {
+        var filhos = Number(inputFilhos.value);
+        resposta.innerHTML = "";
+        if(filhos >= 1) {
+            resposta.innerHTML = '<p>Não tem TV</p>';
+            if(filhos >=2) {
+                resposta.innerHTML += "<p>Não tem internet</p>"
+                if(filhos >=3) {
+                resposta.innerHTML += "<p>Não tem video game</p>"
+                    if(filhos >=4) {
+                        resposta.innerHTML += "<p>Não tem Netflix</p>"
+                    }
+                }
+            }
+        }
+    }
+</script>
+</html>
+
+<!-- 4. Crie um programa em HTML/JS o qual:
+
+a) Solicite a quantidade de filhos que o usuário tem
+
+b) Tenha um botão "Analisar família". Ao clicar nele...
+
+c) Caso tenha 1 ou mais filhos, exiba na tela, abaixo do botão, a frase
+
+    Não tem TV
+
+d) Caso tenha 2 ou mais filhos, exiba na tela, abaixo da frase em c), a frase
+    Não tem internet
+
+e) Caso tenha 3 ou mais filhos, exiba na tela, abaixo da frase em d), a frase
+
+    Não tem video game
+
+f) Caso tenha 4 ou mais filhos, exiba na tela, abaixo da frase em e), a frase
+    Não tem Netflix
+
+OBS: Ou seja, caso o usuário informe que tenha, por exemplo 4 ou mais filhos, devem aparecer as seguintes frases:
+
+   Não tem TV
+   Não tem internet
+   Não tem video game
+   Não tem Netflix
+
+Se tiver até 3 filhos, só não aparece a última frase, do Netflix -->

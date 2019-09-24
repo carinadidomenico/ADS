@@ -9,28 +9,29 @@
 <body>
     <div>
         <label for="">Qual o saldo da conta?
-            <input type="text" id="inputSalario">
+            <input type="text" id="inputSaldo">
         </label>
         <button onclick="verificar()">Verificar finanças</button>
     </div>
-    <p id="frase"></p>
+    <div>
+        <p id="frase"></p>
+    </div>
 </body>
 <script>
     function verificar() {
-        var salario = Number(inputSalario.value);
-        if (salario == 0) {
+        var saldo = Number(inputSaldo.value);
+        if (saldo == 0) {
             frase.innerHTML = "Conta zerada."
             frase.style.color = "black";
         }
-        if(salario < 0) {
+        if(saldo < 0) {
             frase.innerHTML = "Está devendo! ";
             frase.style.color = "red";
-            if(salario <= -1000) {
-                frase.innerHTML += "Igual ao Corinthians: no SERASA!";
-                frase.style.color = "darkred";
+            if(saldo <= -1000) {
+                frase.innerHTML += `<p style="color: darkred;">Igual ao Corinthians: no SERASA!</p>`;
             }
         }
-        if(salario > 0) {
+        if(saldo > 0) {
             frase.innerHTML = "Saldo positivo! :)";
             frase.style.color = "blue";
         }

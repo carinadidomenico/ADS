@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Qual o valor economizado?
+            <input type="text" id="inputEconomia">
+        </label>
+        <button onclick="poderCompra()">Poder de compra</button>
+    </div>
+    <div id="resposta"></div>
+</body>
+<script>
+    function poderCompra() {
+        var economia = Number(inputEconomia.value);
+        if(economia <= 0) {
+            resposta.innerHTML = "<p>Nada de compras =( </p>"
+        }
+        if(0 < economia) {
+            if(economia > 0 && economia<= 100) {
+                resposta.innerHTML = "<p>Viagem de ida e volta pra Praia Grande</p>";
+            }
+            if(economia > 100 && economia < 4000) {
+                resposta.innerHTML = "<p>Viagem de ida e volta pra Praia Grande</p>";
+                resposta.innerHTML += "<p>Uma boa moto usada</p>";
+            }
+            if(economia > 100 && economia >= 4000 ) {
+                resposta.innerHTML = "<p>Viagem de ida e volta pra Praia Grande</p>";
+                resposta.innerHTML += "<p>Uma boa moto usada</p>";
+                resposta.innerHTML += "<p>Mais alguma bobagem legal.</p>"
+            }
+        }
+    }
+</script>
+</html>
+
+<!-- 5. Crie um programa em HTML/JS o qual:
+
+a) Solicite o valor que o usuário tem economizado
+
+b) Ao clicar em "Poder de compra", exibir uma ou várias frases abaixo do dele, conforme estas regras:
+
+   b.1) Caso o valor economizado seja igual ou menor que 0: Exibir SOMENTE a frase Nada de compras :(
+
+   b.2) Caso o valor economizado for maior que 0 e até 100: Exibir Viajem de ida e volta pra Praia Grande
+
+   b.3) Caso o valor economizado seja maior que 100 e menor que 4000: Exibir abaixo da frase de b.2): Uma boa moto usada
+
+   b.4) Caso o valor economizado seja maior que 100 e a partir de 4000: Exibir abaixo da frase de b.3): Mais alguma bobagem legal -->

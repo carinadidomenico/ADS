@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <label for="">Primeira nota:
+                <input type="text" id="nota1">
+            </label>
+        </div>
+        <div>
+            <label for="">Segunda nota:
+                <input type="text" id="nota2">
+            </label>
+        </div>
+        <button onclick="verificar()">Verificar situação</button>
+    </div>
+    <div>
+        <p id="resposta"></p>
+    </div>
+</body>
+<script>
+    function verificar() {
+        var media = (Number(nota1.value) + Number(nota2.value))/2;
+        if(media >=5) {
+            resposta.innerHTML = "Parabéns, aprovado!"
+        }
+        if(media < 5) {
+            resposta.innerHTML = "Tente outra vez."
+        }
+    }
+</script>
+</html>
+
+<!-- 7. Crie um programa em HTML/JS o qual:
+a) Solicite 2 notas de um aluno
+b) Ao clicar em "Verificar situação", calcule sua média e...
+c) Caso a média seja a partir de 5, exiba um alert com "Parabéns, aprovado!"
+d) Caso a média seja menor que 5, exiba um alert com "Tente outra vez..." -->
