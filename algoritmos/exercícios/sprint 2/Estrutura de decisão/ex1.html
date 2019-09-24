@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Qual a idade?
+            <input type="text" id="inputIdade">
+        </label>
+        <button onclick="irFesta()">Ir pra festa</button>
+    </div>
+    <div>
+        <p id="resposta"></p>
+    </div>
+</body>
+<script>
+    function irFesta() {
+        var idade = Number(inputIdade.value);
+        if(idade <18){
+            console.log("Pedir permissão pro responsável.")
+        }
+        console.log("#partiuFesta");
+    }
+</script>
+</html>
+
+<!-- 1. Crie um programa em HTML/JS que:
+a) Pergunte ao usuário sua idade.
+b) Ao clicar num botão "Ir pra festa":
+ * pode acontecer de aparecer um alert com a frase "Pedir permissão pro responsável" caso a idade for menor que 18
+ * sempre vai aparecer um alert com a palavra "#partiuFesta" ao final -->
