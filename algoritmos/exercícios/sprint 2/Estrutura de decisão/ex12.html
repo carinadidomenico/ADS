@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>
+            <b>Vida do Lutador: 
+                <span id="vidaLutador">1000</span>
+            </b>
+        </h2>
+        <img style="height: 300px;" id="lutador" src="https://media.metrolatam.com/2018/11/29/rockyss01fd023332d7750b47493d1939a1ca8abe1200x600-512e79aa6e7ae259d4c2a1ce3a2ba12e-1200x600.jpg" alt="">
+    </div>
+    <div>
+        <button id="btnApanhar" onclick="apanhar()">Apanhar</button>
+        <button id="btnConcentrar" onclick="concentrarForca()">Concentrar força</button>
+    </div>
+    <div>
+        <p id="resposta"></p>
+    </div>
+</body>
+<script>
+    var vida = 1000;
+
+    function apanhar() {
+        vida -= 100;
+        vidaLutador.innerHTML = `${vida.toFixed()}`;
+        condicao();
+    }
+    function concentrarForca() {
+        vida += (vida * 0.05);
+        vidaLutador.innerHTML = `${vida.toFixed()}`;
+        condicao();
+    }
+    
+    function condicao() {
+        if(vida <= 0) {
+            resposta.innerHTML = "Lutador já era!";
+            lutador.src = "https://mhmcdn.ynvolve.net/?w=750&h=450&quality=100&clipping=landscape&url=//manualdohomemmoderno.com.br/files/2016/07/20-incriveis-ensinamentos-de-vida-com-sylvester-stallone-16.jpg&hash=13cedb913ec490fbcc1916a198be5f20ab6664450780a93598ea517fba80a6f3";
+            btnConcentrar.disabled = true;
+            btnApanhar.disabled = true;
+        } else {
+            resposta.innerHTML = "Lutador ainda vivo!";
+        }        
+    }
+
+</script>
+</html>
+
+<!-- 12 (desafio). Crie um programa em HTML/JS o qual:
+a) Tenha o seguinte texto no topo:
+Vida do Lutador: 1000
+b) Abaixo do texto tenha uma foto de um Lutador em ótima condição
+c) Tenha os botões "Apanhar" e "Concentrar força"
+d) Ao clicar no "Apanhar", a vida do Lutador reduz em 100
+e) Ao clicar no "Concentrar força", a vida do Lutador aumenta em 5%
+f) Caso a vida do lutador chegue em 0 ou menos, exibir, abaixo do texto de a) a frase Lutador já era! e a foto do Lutador deve mudar para o mesmo personagem mas todo machudado. Enquanto não chegar em 0, sempre que apanhar ou concentrar força, exiba, no mesmo lugar, a frase Lutador ainda vivo!
+f) Caso a vida seja 0 ou menos, nenhum dos botões deve mais funcionar -->
