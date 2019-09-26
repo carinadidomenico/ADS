@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Qual a meta de economia?
+            <input type="text" id="inputMeta">
+        </label>
+        <label for="">Quanto tem guaraddo?
+            <input type="text" id="inputEconomia">
+        </label>
+        <button onclick="analisar()">Analisar economia</button>
+    </div>
+    <div>
+        <p id="resposta"></p>
+    </div>
+</body>
+<script>
+    function analisar() {
+        var meta = Number(inputMeta.value);
+        var economia = Number(inputEconomia.value);
+
+        if(meta == economia) {
+            resposta.innerHTML = "Parabéns, meta alcançada!";
+        }
+        if(meta < economia) {
+            resposta.innerHTML = `Meta ultrapassada em R$${economia - meta}!`;
+        }
+        if(meta > economia) {
+            resposta.innerHTML = `Força! Ainda em busca da meta! Falta R$${meta - economia}`;
+        }
+    }
+</script>
+</html>
+
+<!-- 9. Crie um programa em HTML/JS o qual:
+a) Pergunte ao usuário qual sua meta de economia
+b) Pergunte ao usuário quanto tem guardado
+c) Ao clicar em "Analisar economia"...
+d) Caso a meta tenha sido alcançada ou ultrapassada, exibir, abaixo do botão, a frase Parabéns, meta alcançada!. Caso a meta tenha sido ultrapassada, exibir também a frase Meta ultrapassada em X (onde X é a diferença entre a economia e a meta)
+e) Caso a meta ainda não tenha sido alcançada, exibir, abaixo do botão, a frase Força! Ainda em busca da meta! Falta X (onde X é a diferença entre a meta e a economia) -->

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>
+            <b>Vida do Lutador: 
+                <span id="vidaLutador">1000</span>
+            </b>
+        </h2>
+    </div>
+    <div>
+        <button id="btnApanhar" onclick="apanhar()">Apanhar</button>
+        <button id="btnConcentrar" onclick="concentrarForca()">Concentrar força</button>
+    </div>
+    <div>
+        <p id="resposta"></p>
+    </div>
+</body>
+<script>
+    var vida = 1000;
+
+    function apanhar() {
+        vida -= 100;
+        vidaLutador.innerHTML = `${vida}`;
+        condicao();
+    }
+    function concentrarForca() {
+        vida += 10;
+        vidaLutador.innerHTML = `${vida}`;
+        condicao();
+    }
+    
+    function condicao() {
+        if(vida <= 0) {
+            resposta.innerHTML = "Lutador já era!";
+            btnConcentrar.disabled = true;
+            btnApanhar.disabled = true;
+        } else {
+            resposta.innerHTML = "Lutador ainda vivo!";
+        }        
+    }
+
+</script>
+</html>
+
+<!-- 11 (desafio). Crie um programa em HTML/JS o qual:
+a) Tenha o seguinte texto no topo:
+Vida do Lutador: 1000
+b) Tenha os botões "Apanhar" e "Concentrar força"
+c) Ao clicar no "Apanhar", a vida do Lutador reduz em 100
+d) Ao clicar no "Concentrar força", a vida do Lutador aumenta em 10
+e) Caso a vida do lutador chegue em 0 ou menos, exibir, abaixo do texto de a) a frase Lutador já era!. Enquanto não chegar em 0, sempre que apanhar ou concentrar força, exiba, no mesmo lugar, a frase Lutador ainda vivo!
+f) Caso a vida seja 0 ou menos, nenhum dos botões deve mais funcionar -->
