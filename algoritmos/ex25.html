@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Calculadora aprimorada do aluno Bandtec</h2>
+    <div>
+        <select id="transporte">
+            <option>- Meio de Transporte -</option>
+            <option value="onibus">Ônibus</option>
+            <option value="metro">Metrô</option>
+            <option value="carro">Carro</option>
+            <option value="bicicleta">Bicicleta</option>
+        </select>
+    </div>
+    <div>
+        <label>Distância da casa até a faculdade:
+            <input id="distancia" type="number">
+        </label>
+    </div>
+    <button onclick="calcular()">Calcular cansaço</button>
+</body>
+<script>
+    function calcular() {
+        var dist = Number(distancia.value);
+
+        if (dist <= 10) {
+            if (transporte.value == "carro" || transporte.value == "metro" || transporte.value == "onibus"){
+                console.log ("Tá tranks.");
+            } else {
+                console.log ("É, um pouco cansado...");
+            }
+        } else {
+            if (transporte.value == "carro") {
+                console.log("É, um pouco cansado...");
+            }
+            if (transporte.value == "bicicleta") {
+                console.log("Vish, tá só a capa da gaita...");
+            }
+            else {
+                console.log("Bem cansado...");
+            }
+        }
+    }
+</script>
+</html>
+
+<!-- 25. (Desafio) Vamos melhorar o exercício 23. Crie um programa em HTML/JS o qual:
+a) Tenha o seguinte texto no topo:
+Calculadora de cansaço aprimorada do aluno Bandtec.
+b) Tenha o texto "Meio de transporte" e uma combo para o usuário escolher o meio de transporte dele, podendo ser:
+     Ônibus.
+     Metrô.
+     Carro.
+     Bicicleta.
+
+c) Tenha um input de texto para o usuário digitar a distância da casa dele até a faculdade, com o texto "Distância da faculdade (KM)" ao lado.
+d) Tenha o botão "Calcular cansaço" que ao clicar mostrar em um alerta o nível de cansaço do usuário.
+e) Se a distância da faculdade for de ATÉ 10 KM:
+SE o meio de transporte for "Carro" OU "Metrô" OU "Ônibus" exiba um alert com a frase ("Tá tranks ...").
+SENÃO exiba um alert com a frase ("É ... um pouco cansado ...").
+f) Se a distância da faculdade for MAIOR que 10 KM:
+SE o meio de transporte for "Carro" exiba um alert com a frase ("É ... um pouco cansado ...");
+SE o meio de transporte for "Metrô" OU "Ônibus" exiba um alert com a frase ("Bem cansado ...").
+SE o meio de transporte for "Bicicleta" exiba um alert com a frase ("Vish ... ta só o pó ..."). -->

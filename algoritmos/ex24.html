@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Lista 5 - ex24</h2>
+    <div>
+        <select id="alimentos">
+            <option value="carne_bovina">Carne bovina</option>
+            <option value="soja">Soja</option>
+            <option value="carne_suina">Carne suína</option>
+            <option value="legumes">Legumes</option>
+            <option value="carne_peixe">Carne de peixe</option>
+            <option value="frutas">Frutas</option>
+            <option value="ovo">Ovo</option>
+        </select>
+        <button onclick="alimentacao()">Tipo de alimentação</button>
+    </div>
+    <div id="frases"></div>
+</body>
+<script>
+    function alimentacao() {
+        if(alimentos.value == "carne_bovina" || alimentos.value == "carne_suina" || alimentos.value == "carne_peixe" || alimentos.value == "ovo") {
+            frases.innerHTML = "<p>Você não pode ser vegano.</p>";
+        }
+        if (alimentos.value == "soja" || alimentos.value == "legumes" || alimentos.value == "frutas" || alimentos.value == "ovo") {
+            frases.innerHTML = "<p>Você pode ser vegetariano.</p>";
+
+        }
+        if (alimentos.value == "soja" || alimentos.value == "legumes" || alimentos.value == "frutas") {
+            frases.innerHTML = "<p>Você pode ser vegano.</p>";
+            frases.innerHTML += "<p>Você pode ser vegetariano.</p>";
+        }
+    }
+</script>
+</html>
+
+<!-- 24. Crie um programa em HTML/JS o qual:
+    a) Tenha uma combo com os seguintes tipos de alimentos:
+    Carne bovina
+    Soja
+    Carne suina
+    Legumes
+    Carne de peixe
+    Frutas
+    Ovos
+    b) Ao clicar em "Tipo de alimentação", exiba uma ou mais frases abaixo do botão, que podem ser:
+    b.1) "Você não pode ser Vegano", caso o item escolhido seja alguma das carnes ou os "Ovos"
+    b.2) "Você pode ser Vegano", caso o item escolhido seja "Soja" ou "Legumes" ou "Frutas"
+    b.3) "Você pode ser Vegetariano", caso o item escolhido seja "Soja" ou "Legumes" ou "Frutas" ou "Ovos" -->

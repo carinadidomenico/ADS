@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Idade:
+        <input type="text" id="idade">
+    </label>
+    <button onclick="votacao()">Ver situação</button>
+</body>
+<script>
+    function votacao() {
+        var valor_idade = Number(idade.value);
+
+        if(valor_idade < 18 || valor_idade > 65){
+            console.log("Seu voto é opcional.");
+        } else {
+            console.log("Seu voto é obrigatório!")
+        }
+    }
+</script>
+</html>

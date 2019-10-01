@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Lista 5 - ex22</h2>
+    <div>
+        <label>Temperatura atual:
+             <input id="temperatura" type="number">
+        </label>  
+        <button onclick="clima()">Analisar clima</button>
+    </div>
+    <div id="frase">
+    </div>
+</body>
+<script>
+    function clima() {
+        var valor_temperatura = Number(temperatura.value);
+
+        if(valor_temperatura >= 21 && valor_temperatura <= 24) {
+            frase.innerHTML = "Temperatura confortável."
+        } else if (valor_temperatura < 21) {
+            frase.innerHTML = "Alerta de desconforto."
+            frase.innerHTML += "<br>As pessoas vão ter hipotermia."
+        } else {
+            frase.innerHTML = "Alerta de desconforto.";
+            frase.innerHTML += "<br>As pessoas vão derreter."
+        }
+    }
+</script>
+</html>
+
+<!-- 22. Considere que a temperatura confortável para o ser humano é entre 21 e 24 graus. Crie então um sistema de alerta que apenas avisa se a temperatura está desconfortável e qual a consequência desse desconforto. Nesse programa, se a temperatura estuver confortável, simplesmente nenhum aviso é emitido. Para tal, crie um programa em HTML/JS que:
+a) Pergunte a temperatura atual
+b) Ao clicar em "Analisar clima", apenas se a temperatura não for confortável, exiba um alert com a frase "Alerta de desconforto!" e, depois, uma das frases a seguir, também em alerts:
+  b.1) "As pessoas vão ter hipotermina", caso o a temperatura seja menor que o limite inferior da zona de conforto
+  b.2) "As pessoas vão derreter", caso o a temperatura seja maior que o limite superior da zona de conforto
+c) Lembrando que, em caso de tempetarura confortável, simplesmente nada acontece -->
