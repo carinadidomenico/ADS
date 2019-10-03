@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Obtendo informações de textos</h2>
+    <div>
+        <label>Digite algo:
+            <input type="text" id="frase" onkeyup="analisar()">
+        </label>
+        <div>
+            <p>Quantas letras? <span id="v_letras"></span></p>
+            <p>Começa com 'a'? <span id="v_comeca"></span></p>
+            <p>Termina com 'c'? <span id="v_termina"></span></p>
+            <p>Contém '@'? <span id="v_contem"></span></p>
+            <p>Está vazia? <span id="v_vazia"></span></p>
+        </div>
+    </div>
+</body>
+<script>
+    function analisar() {
+        v_letras.innerHTML = frase.value.length;
+        v_comeca.innerHTML = frase.value.startsWith("a") ? "Sim": "Não";
+        v_termina.innerHTML = frase.value.endsWith("c") ? "Sim": "Não";
+        v_contem.innerHTML = frase.value.indexOf("@") == -1 ? "Não": "Sim";
+        v_vazia.innerHTML = frase.value.length == 0 ? "Não": "Sim";
+    }
+</script>
+</html>
