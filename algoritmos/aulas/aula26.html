@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Estruturas de repetição</h2>
+    <button onclick="repetirFrases()">Repetir frase</button>
+    <button onclick="repetirImagens()">Repetir imagem</button>
+    <div id="frases"></div>
+    <div id="imagens"></div>
+</body>
+<script>
+    function repetirFrases() {
+        frases.innerHTML = "";
+        var contador = 0;
+
+        while (contador < 10) {
+            frases.innerHTML += `<p> Eu amo algoritmos</p>`;
+            contador++;
+        }
+
+        console.log("Cabô")
+
+        // for (var i = 0; i<10;i++) {
+        //     console.log("Olar")
+        // }
+    }
+
+    function repetirImagens() {
+        imagens.innerHTML = "";
+        var contador = 0;
+
+        while (contador < 10) {
+            imagens.innerHTML += `<img style="width: 200px; margin: 1vw;" src="https://http.cat/301">`;
+            contador++;
+        }
+    }
+</script>
+</html>

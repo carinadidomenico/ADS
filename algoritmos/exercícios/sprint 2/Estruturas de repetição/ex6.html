@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Quantos elefantes?</label>
+        <input type="number" id="elefantes">
+    </div>
+    <button onclick="atazanar()">Atazanar a médium</button>
+    <div id="estrofes"></div>
+</body>
+<script>
+    function atazanar() {
+        estrofes.innerHTML = "";
+
+        var contador = 1;
+        var incomodar = "incomodam, ";
+
+        while (contador < Number(elefantes.value)) {
+            if (contador == 1) {
+                estrofes.innerHTML += `<p>${contador} elefante incomoda muita gente! ${contador+1} elefantes ${incomodar.repeat(contador+1)} muito mais!</p>`
+            } else {
+                estrofes.innerHTML += `<p>${contador} elefantes incomoda muita gente! ${contador+1} elefantes ${incomodar.repeat(contador+1)} muito mais!</p>`
+                }
+            contador++;
+        }
+    }
+
+    // function atazanar() {
+    //     estrofes.innerHTML = "";
+
+    //     var contador = 1;
+
+    //     while(contador < Number(elefantes.value)) {
+    //         estrofes.innerHTML += `${contador} elefante incomoda muita gente! ${contador+1} elefantes `;        
+    //         while (contador-1 < Number(elefantes.value)) {
+    //             estrofes.innerHTML += "incomodam, "
+    //             contador++
+    //         }
+    //         estrofes.innerHTML += "muito mais!"                      
+    //         contador++;
+    //     }
+    // }
+</script>
+</html>
+
+
+<!-- 6 (desafio). No filme clássico "Ghost, do outra lado da vida", o protagonista, para atazanar a vida da médium canta a seguinte canção...
+
+1 elefante incomoda muita gente!
+2 elefantes, incomodam, incomodam, muito mais!
+
+1 elefante incomoda muita gente!
+3 elefantes, incomodam, incomodam, incomodam, muito mais!
+
+1 elefante incomoda muita gente!
+4 elefantes, incomodam, incomodam, incomodam, incomodam, muito mais!
+
+... e assim por diante
+
+Crie um programa em HTML/JS o qual:
+a) Solicite ao usuário a quantidade elefantes
+
+b) Ao clicar em "Atazanar a médium", exiba sempre o trecho da canção de 1 elefante, seguido do trecho com 2 elefantes e depois 3... até a quantidade de elefantes indicado em a). Note que a palavra "incomodam" repete-se conforme essa mesma quantidade.
+
+Por exemplo, o se o usuário informar 4 em a), devem aparacer 3 estrofes, como no enunciado da questão, de "2 elefantes" até "4 elefantes" -->
