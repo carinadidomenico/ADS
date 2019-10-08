@@ -15,37 +15,39 @@
     <div id="estrofes"></div>
 </body>
 <script>
-    function atazanar() {
-        estrofes.innerHTML = "";
-
-        var contador = 1;
-        var incomodar = "incomodam, ";
-
-        while (contador < Number(elefantes.value)) {
-            if (contador == 1) {
-                estrofes.innerHTML += `<p>${contador} elefante incomoda muita gente! ${contador+1} elefantes ${incomodar.repeat(contador+1)} muito mais!</p>`
-            } else {
-                estrofes.innerHTML += `<p>${contador} elefantes incomoda muita gente! ${contador+1} elefantes ${incomodar.repeat(contador+1)} muito mais!</p>`
-                }
-            contador++;
-        }
-    }
-
     // function atazanar() {
     //     estrofes.innerHTML = "";
 
     //     var contador = 1;
+    //     var incomodar = "incomodam, ";
 
-    //     while(contador < Number(elefantes.value)) {
-    //         estrofes.innerHTML += `${contador} elefante incomoda muita gente! ${contador+1} elefantes `;        
-    //         while (contador-1 < Number(elefantes.value)) {
-    //             estrofes.innerHTML += "incomodam, "
-    //             contador++
-    //         }
-    //         estrofes.innerHTML += "muito mais!"                      
+    //     while (contador < Number(elefantes.value)) {
+    //         if (contador == 1) {
+    //             estrofes.innerHTML += `<p>${contador} elefante incomoda muita gente! ${contador+1} elefantes ${incomodar.repeat(contador+1)} muito mais!</p>`
+    //         } else {
+    //             estrofes.innerHTML += `<p>${contador} elefantes incomoda muita gente! ${contador+1} elefantes ${incomodar.repeat(contador+1)} muito mais!</p>`
+    //             }
     //         contador++;
     //     }
     // }
+
+    function atazanar() {
+        estrofes.innerHTML = "";
+
+        var contador = 1;
+        var incomodam = 1;
+
+
+        while(contador < Number(elefantes.value)) {
+            estrofes.innerHTML += `<br>1 elefante incomoda muita gente! ${contador+1} elefantes `;        
+            while (incomodam < Number(elefantes.value)) {
+                estrofes.innerHTML += "incomodam, "
+                incomodam++;
+            }
+            estrofes.innerHTML += "muito mais!"                      
+            contador++;
+        }
+    }
 </script>
 </html>
 
