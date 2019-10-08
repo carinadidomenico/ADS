@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">Login:</label>
+        <input type="text" id="login">
+    </div>
+    <div>
+        <label for="">Senha:</label>
+        <input type="password" id="senha">
+    </div>
+    <button onclick="validar()">Validar</button>
+</body>
+<script>
+    function validar() {
+        if(login.value.endsWith("@bandtec.com.br") && senha.value.length >= 4 && login.value != "@bandtec.com.br") {
+            console.log('Cadastro válido!')
+        } else {
+            console.log("Valores inválidos!")
+        }
+    }
+</script>
+</html>
+
+<!-- 30. Crie um programa em HTML/JS o qual:
+a) Solicite o login e a senha do usuário
+b) Ao clicar em "Validar"...
+c) Caso o login não termine com "@bandtec.com.br" ou a senha não tenha pelo menos 4 caracteres, exiba um alert "Valores inválidos". Outra situação para valores inválidos é o login conter apenas "@bandtec.com.br"
+d) Caso contrário, exiba um alert "Cadastro válido" -->

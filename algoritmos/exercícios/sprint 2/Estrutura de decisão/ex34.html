@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Digite uma frase:</label>
+        <input onkeyup="localizar()" type="text" id="frase">
+    </div>
+    <div>
+        <p>A primeira letra é: <b id="primeira_letra"></b></p>
+        <p>A ultima letra é: <b id="ultima_letra"></b></p>
+    </div>
+</body>
+<script>
+    function localizar() {
+        primeira_letra.innerHTML = frase.value[0];
+        ultima_letra.innerHTML = frase.value[frase.value.length-1];
+        if (frase.value == 0) {
+            primeira_letra.innerHTML = "";
+            ultima_letra.innerHTML = "";
+        }
+    }
+
+</script>
+</html>
