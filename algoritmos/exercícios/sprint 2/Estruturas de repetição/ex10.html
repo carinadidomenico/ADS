@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Quantos ônibus precisa pegar?</label>
+        <input type="number" id="inputOnibus">
+    </div>
+    <div>
+        <label>Quantos trens precisa pegar?</label>
+        <input type="number" id="inputTrem">
+    </div>
+    <div>
+        <label>Quantos metrôs precisa pegar?</label>
+        <input type="number" id="inputMetro">
+    </div>
+    <button onclick="trajeto()">#PartiuFaculdade</button>
+    <div id="frases"></div>
+</body>
+<script>
+    function trajeto() {
+        frases.innerHTML = "";
+
+        var contadorOnibus = 1;
+        var contadorTrem = 1;
+        var contadorMetro = 1;
+
+        
+        while (contadorOnibus <= Number(inputOnibus.value)) {
+            frases.innerHTML += `<p style="color:red">Pegando o ${contadorOnibus}º buzão</p>`;
+            contadorOnibus++;
+        }
+        while (contadorTrem <= Number(inputTrem.value)) {
+            frases.innerHTML += `<p style="color:green">Pegando o ${contadorTrem}º trem</p>`;
+            contadorTrem++;
+        }
+        while (contadorMetro <= Number(inputMetro.value)) {
+            frases.innerHTML += `<p style="color:blue">Pegando o ${contadorMetro}º metrô</p>`;
+            contadorMetro++;
+        }
+    }
+</script>
+</html>
+
+<!-- 10. Crie um programa em HTML/JS que simule o trajeto que um estudante do extremo leste da capital faz para chegar na Bandtec:
+a) Pergunte ao usuário quantos ônibus precisa pegar
+b) Pergunte ao usuário quantos trens precisa pegar
+c) Pergunte ao usuário quantos metrôs precisa pegar
+d) Ao clicar num botão "#Partiu Trajeto"...
+e) Deve exibir, abaixo do botão, na cor vermelha, frases como estas, de acordo com a quantidade de ônibus indicadas em a)
+    Pegando o 1º buzão
+    Pegando o 2º buzão
+f) Deve exibir, abaixo das frases de e), na cor verde, frases como estas, de acordo com a quantidade de trens indicadas em b)
+    Pegando o 1º trem
+    Pegando o 2º trem
+g) Deve exibir, abaixo das frases de f), na cor azul, frases como estas, de acordo com a quantidade de metros indicadas em c)
+    Pegando o 1º metrô
+    Pegando o 2º metrô -->
