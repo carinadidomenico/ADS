@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>Qual a sua idade?
+        <input type="text" id="inputIdade">
+    </label>
+    <button onclick="festa()">Ir pra festa</button>
+    <div id="resposta"></div>
+</body>
+<script>
+    function festa() {
+        var idade = Number(inputIdade.value);
+        idade >= 15 ? (idade >= 18 ? resposta.innerHTML = "#partiufesta": resposta.innerHTML = "Pedir permissão pros pais <br> #partiufesta"): resposta.innerHTML = "Pedir permissão pros pais <br> Sem chance vai estudar.";
+    }
+</script>
+</html>
+
+<!-- 2. Refaça o exercício anterior e aperfeiçoe ele, de tal forma que:
+ a) Ao clicar num botão "Ir pra festa" e a idade for menor que 18, continua acontecendo o que já acontecia, porém, caso a idade for menor que 15, exibir na sequência "Sem chance! Vai estudar!"
+ b) A mensagem final de "#partiuFesta" só aparece se a idade for maior ou igual a 15 (>=15), senão nem aparece -->
