@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estruturas de repetição (for)</title>
+</head>
+<body>
+    <h2>Estruturas de repetição (for)</h2>
+    <button onclick="repetir__console()">Repetir console</button>
+    <button onclick="repetir__html()">Repetir pagina</button>
+    <button onclick="repetir__imagem()">Repetir imagem</button>
+    <div style="margin: 2rem;" id="frases"></div>
+    <div style="margin: 2rem;" id="imagens"></div>
+</body>
+<script>
+    function repetir__console() {
+        for (var contador = 0; contador < 10; contador++) {
+            console.log('Eu amo javascripto!');
+        }
+    }
+
+    function repetir__html() {
+        for (var contador = 0; contador < 10; contador++) {
+            frases.innerHTML += 'Eu amo javascripto!<br>';
+        }
+    }
+
+    function repetir__imagem() {
+        for (var contador = 0; contador < 10; contador++) {
+            imagens.innerHTML += '<img style="width: 100px;" src="https://i.imgur.com/QUcNaYS.png" alt="Bob Esponja">';
+        }
+    }
+</script>
+</html>

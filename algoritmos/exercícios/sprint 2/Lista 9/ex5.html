@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>Quantidade de troféus que seu clube tem:
+        <input id="trofeu" type="text">
+    </label>
+    <button onclick="verTrofeus()">Ver troféus de mundiais FIFA</button>
+    <div id="resposta"></div>
+</body>
+<script>
+    function verTrofeus() {
+        resposta.innerHTML = "";
+        if(Number(trofeu.value) <= 0 ){
+            resposta.innerHTML = `<br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSuUJpWbvRdIX90gfVS-J1sfl0hr8cuwVU7hByHlRyOEHhw7WuR" alt="">`
+        } else {
+            for(var i = 1; i <= Number(trofeu.value); i++) {
+                resposta.innerHTML += `<br><img src="https://i.pinimg.com/originals/25/f7/24/25f724f50d837a780f487a10d7bff647.png" alt="">`
+            }
+        }
+    }
+</script>
+</html>
+
+<!-- 5. Crie um programa em HTML/JS o qual:
+a) Solicite ao usuário a quantidade de títulos mundiais da FIFA que seu clube tem
+
+b) Ao clicar num botão "Ver troféus de mundiais FIFA"...
+
+c) Devem aparecer, abaixo do botão, N imagens de um troféu, onde N é o valor informado em a). Porém...
+
+d) Caso o valor informado em a) seja 0 ou menos, a imagem que deve aparecer apenas uma vez abaixo do botão é de um torcedor do time chorando. -->

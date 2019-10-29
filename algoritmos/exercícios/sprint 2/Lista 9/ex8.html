@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Quantas voltas o carro dará?
+            <input type="number" id="voltas">
+        </label>
+        <button onclick="corrida()">Iniciar corrida</button>
+    </div>
+    <div id="frases"></div>
+</body>
+<script>
+    function corrida() {
+        for(var i = 1; i <= Number(voltas.value); i++) {
+            frases.innerHTML += `<p>Carro dando a ${i}ª volta.</p>`
+        } 
+    }
+</script>
+</html>
+
+<!-- 8. Crie um programa em HTML/JS o qual:
+a) Pergunte ao usuário quantas voltas um carro dará numa corrida
+b) Ao clicar num botão "Iniciar corrida!"...
+c) Exiba, debaixo do botão, frases como estas:
+    Carro dando a 1ª volta
+    Carro dando a 2ª volta
+    Carro dando a 3ª volta
+d) Até que o carro "termine" a corrida. Nesse caso, exiba abaixo de tudo, somente 1 vez, a frase
+    Corrida finalizada! -->

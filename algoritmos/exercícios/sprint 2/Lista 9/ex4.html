@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="exibir()">Numeros cabalísticos</button>
+    <div id="numeros"></div>
+</body>
+<script>
+    function exibir() {
+        for(var i = 0; i <= 15; i++) {
+            if (i != 3 && i != 4 && i != 7 && i != 10 && i != 12) {
+                numeros.innerHTML +=  `${i}<br>`;
+            }
+        }
+    }
+</script>
+</html>
+
+<!-- 4. Crie um programa em HTML/JS o qual:
+    a) Ao clicar num botão "Números cabalísticos"...
+    c) Exiba, debaixo do botão, os números de 1 a 15, um embaixo do outro, PORÉM, não devem aparecer os números cabalísticos 3, 4, 7, 10 e 12. -->
