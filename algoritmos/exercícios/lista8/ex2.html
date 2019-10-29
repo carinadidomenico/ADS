@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>Qual a sua renda?
+        <input onkeyup="classeSocial()" type="number" id="input__renda" autofocus>
+    </label>
+    <p id="resposta"></p>
+</body>
+<script>
+    function classeSocial() {
+        var renda = Number(input__renda.value);
+
+        if(renda <= 250) {
+            resposta.innerHTML = "Classe E";
+        } else if(renda <= 900) {
+            resposta.innerHTML = "Classe D";
+        } else if (renda <= 2500) {
+            resposta.innerHTML = "Classe C";
+        } else if (renda <= 9500) {
+            resposta.innerHTML = "Classe B";
+        } else {
+            resposta.innerHTML = "Classe A";
+        }
+    }
+</script>
+</html>
+
+<!-- 2. Crie um programa que exibe a classe social da pessoa conforme a renda familiar mensal.
+a) Solicite a renda familiar mensal
+b) Conforme digita, deve aparecer abaixo uma dessas frases:  
+   "Classe E" (até 250)
+   "Classe D" (+250 até 900)
+   "Classe C" (+900 até 2500)
+   "Classe B" (+2500 até 9500)
+   "Classe A" (+9500) -->

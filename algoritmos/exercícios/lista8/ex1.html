@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Qual a sua altura?
+            <input onkeyup="esportes()" type="number" id="input__altura">
+        </label>
+    </div>
+    <p id="resposta"></p>
+</body>
+<script>
+    function esportes() {
+        var altura = Number(input__altura.value);
+
+        if(altura <= 1.65) {
+            resposta.innerHTML = "Você pode ser piloto de corrida."
+        } else if (altura <= 1.80) {
+            resposta.innerHTML = "Você pode ser jogador de futebol."
+        } else {
+            resposta.innerHTML = "Você pode ser jogador de vôlei ou basquete."
+        }
+    }
+</script>
+</html>
+
+<!-- 1. Crie um programa no qual um profissional de educação física possa determinar de forma mais rápida quais esportes uma pessoa tem uma boa altura para praticar.
+a) Solicite sua altura
+b) Conforme vai digitando, deve aparecer abaixo uma dessas frases:
+   "Você pode ser piloto de corrida" (altura até 1.65)
+   "Você pode ser jogador de futebol" (altura +1.65 até 1.80)
+   "Você pode ser jogador de volei ou basquete" (altura + 1.80) -->

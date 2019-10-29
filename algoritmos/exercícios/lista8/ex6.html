@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Qual o peso da criança?
+            <input type="number" id="input__peso">
+        </label>
+        <button onclick="avaliar()">Avaliar</button>
+    </div>
+    <p id="resposta"></p>
+</body>
+<script>
+    function avaliar() {
+        var peso = Number(input__peso.value);
+
+        if(peso == 18.3) {
+            resposta.innerHTML = "Peso perfeito!";
+        } else if(peso <= 13.5) {
+            resposta.innerHTML = "Abaixo do peso.";
+        } else if (peso <= 21.2) {
+            resposta.innerHTML = "Peso na média.";
+        } else {
+            resposta.innerHTML = "Acima do peso.";
+        }
+    }
+</script>
+</html>
+
+<!-- 6. Dra Méba é nutróloga e quer um programa que a ajude a avaliar o peso de crianças de 5 anos. Crie para ela um programa que, ao ler o peso de uma criança de 5 anos, exiba uma dessas frases
+
+Abaixo do peso (se peso até 13.5kg)
+Acima do peso (se peso maior que 21.2kg)
+Peso na média (se peso maior que 13.5kg até 21.2kg)
+Peso perfeito (se o peso for exatamente 18.3kg) -->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Qual o saldo da conta do banco?
+            <input type="number" id="input__saldo">
+        </label>
+        <button onclick="verificar()">Verificar finanças</button>
+    </div>
+    <p id="resposta"></p>
+</body>
+<script>
+    function verificar() {
+        var saldo = Number(input__saldo.value);
+
+        if(saldo == 0 ) {
+            resposta.innerHTML = "Conta zerada.";
+            resposta.style.color = "black";
+        } else if (saldo <= -1000) {
+            resposta.innerHTML = "Igual ao Corinthias: No SERASA!";
+            resposta.style.color = "darkred";
+        } else if(saldo < 0) {
+            resposta.innerHTML = "Está devendo.";
+            resposta.style.color = "red";
+        } else {
+            resposta.innerHTML = "Saldo positivo.";
+            resposta.style.color = "blue";
+        } 
+    }
+</script>
+</html>
+
+<!-- 3. Faça um programa em HTML/JS o qual:
+ a) Pergunte ao usuário o valor de seu saldo na conta do banco
+ b) Ao clicar num botão "Verificar finanças"...
+   
+    b.1) Caso o saldo em conta for igual a zero (==0), exiba esta frase na cor preta na tela: "Conta zerada".
+   
+    b.2) Caso o saldo seja negativo (<0), exiba esta frase na cor vermelha na tela: "Está devendo!". E caso o saldo for menor ou igual que 1000 negativo (<= -1000), exibir esta frase na cor vermelha escura na tela: "Igual ao Corinthias: No SERASA!"
+   
+    b.3) Caso o saldo seja positivo (>0), exiba esta frase na cor azul: "Saldo positivo! :)"
+   
+#FicaDica: Todas as frases já podem estar na tela, porém "invisíveis" ;) -->
+<!-- 4. Usando else-if, refaça a questão 03 da Lista 05 -->
