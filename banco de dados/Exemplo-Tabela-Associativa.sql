@@ -94,3 +94,72 @@ select distinct media from AlunoDisciplina;
     
 -- Exibir a quantidade de médias da tabela AlunoDisciplina
 	select count(distinct media) as "Qtd de médias distintas" from AlunoDisciplina;
+    
+-- Criar tabela curso
+create table Curso (
+	idCurso int primary key,
+    nomeCurso varchar(10),
+    coordenador varchar (40)
+);
+
+-- Inserir cados na tabela Curso
+insert into Curso values
+	(1000, 'ADS', 'Gerson'),
+	(1001, 'CCO', 'Marise'),
+    (1002,'BD', 'Célia'),
+    (1003, 'Redes', 'Leo');
+    
+-- Exibir dados da tabela Curso
+select * from Curso;
+
+-- Acrescentar coluna de chave estrangeira na tabela Aluno (referente à Curso)
+alter table Aluno add fkCurso int,
+	add foreign key (fkCurso) references Curso (idCurso);
+
+-- Atribuir valores para a coluna fkCurso
+update Aluno set fkCurso = 1000 where ra <= 5001;
+update Aluno set fkCurso = 1001 where ra = 5002;
+update Aluno set fkCurso = 1002 where ra = 5003;
+
+-- Inserir mais um aluno
+insert into Aluno values
+	(null, 'Luigi', 'Guarapiranga', null);
+    
+-- Exibir os alunos e os cursos correspondentes
+select * from Curso, Aluno where idCurso = fkCurso;
+
+-- Idem ao comando anterior usando JOIN
+select * from Aluno join Curso on idCurso = fkCurso;
+select * from Aluno inner join Curso on idCurso = fkCurso;
+
+-- Idem comando anterior, mas selecionando todos os alunos, mesmo os sem curso
+select * from Aluno left join Curso on idCurso = fkCurso;
+
+-- Idem ao comando anterior, mas selecionando todos os cursos, mesmo os sem alunos
+select * from Aluno right join Curso on idCurso = fkCurso;
+
+-- Selecionar alunos do curso de ADS (2 maneiras)
+select * from Aluno join Curso on idCurso = fkCurso 
+								where nomeCurso = "ADS";
+select * from Aluno join Curso on idCurso = fkCurso 
+								and nomeCurso = "ADS";
+                                
+-- Exibe os dados dos alunos e das suas disciplinas usando JOIN
+select * from Aluno join AlunoDisciplina on fkAluno = ra
+					join Disciplina on fkDisc = idDisc;
+
+-- Exibir alunos da disciplina Algoritmos
+select * from Aluno join AlunoDisciplina on fkAluno = ra
+					join Disciplina on fkDisc = idDisc
+                    where nomeDisc = 'Algoritmos';
+                    
+-- Exibir apenas as disciplinas de determinado aluno
+select * from Aluno join AlunoDisciplina on fkAluno = ra
+					join Disciplina on fkDisc = idDisc
+                    where nomeAluno = 'Mario Bros';
+-- Tudo o que for escrito depois do comando start transaction pode ser desfeito com o comando rollback
+-- Se for manter as mudanças, fechar o start transaction com commit              
+start transaction;
+delete from Curso where idCurso = 1003;
+select * from Curso;
+rollback;
