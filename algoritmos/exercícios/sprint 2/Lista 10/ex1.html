@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>Digite seu número da sorte:</label>
+    <input type="number" id="numero">
+    <button onclick="sortear()">Valendo!</button>
+    <div id="resposta"></div>
+</body>
+<script>
+    function sortear() {
+        var numeroDaSorte = Number(numero.value);
+        var contador = 0;
+        var sorteio;
+
+        while(numeroDaSorte != sorteio) {
+            sorteio = parseInt(Math.random()* 101);
+            contador++
+        console.log(sorteio);
+        }
+
+        resposta.innerHTML = `Foram necessários ${contador} sorteios`
+    }
+</script>
+</html>
+
+<!-- 1. Crie um programa que 
+a) Solicite ao usuário seu número da sorte, entre 0 e 100.
+b) Ao clicar em "Valendo!", o programa fica sorteando números aleatórios quantas vezes forem necessárias até que seja sorteado o número informado em a). 
+c) Quando o número for finalmente sorteado, deve aparecer ou um alerta ou na página mesmo uma frase como esta:
+    Foram necessários X sorteios -->

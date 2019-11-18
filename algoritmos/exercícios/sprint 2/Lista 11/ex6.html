@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>Digitte o preço do produto</label>
+    <input type="number" id="preco">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar estoque</button>
+    <div id="resposta"></div>
+</body>
+<script>
+    var produtos = [];
+    var soma = 0;
+    
+    function cadastrar() {
+        produtos.push(Number(preco.value));
+    }
+
+    function atualizar() {
+        for(var i = 0; i < produtos.length; i++){
+            soma += Number(preco.value);
+        }
+    resposta.innerHTML = `Você tem ${produtos.length} produtos cadastrados em estoque.<br>`;
+    resposta.innerHTML += `Seu estoque vale R$${soma.toFixed(2)}`
+    }
+</script>
+</html>
+
+<!-- 6. Crie um programa em HTML/JS o qual:
+a) Pergunte ao usuário o preço de um produto
+b) Ao clicar em "Cadastrar", o preço fica cadastrado num lugar que o usuário não vê
+c) Ao clicar em "Atualizar Estoque", deve aparecer um texto como este abaixo:
+   Você tem X produtos cadastrados em estoque
+   Seu estoque vale R$Y
+Onde X é a quantidade de produtos cadastrados pelo usuário e Y é a soma de todos os valores, com 2 casas decimais. -->
