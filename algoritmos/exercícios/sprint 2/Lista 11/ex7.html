@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Cadastrar filho 
+            <input type="text" id="filho">
+        </label>
+        <button onclick="cadastrar()">Cadastrar</button>
+    </div>
+    <div>
+        <button onclick="atualizar()">Atualizar</button>
+    </div>
+    <div id="custos"></div>
+</body>
+<script>
+    var filhos = [];
+
+    function cadastrar() {
+        var repetido = 0;
+
+        for(var i = 0; i < filhos.length; i++) {
+            if(filho.value == filhos[i]) {
+                repetido++;
+            }
+        }
+        
+        if(repetido == 0) {
+            filhos.push(filho.value)
+        } else {
+            alert("Você não pode ter dois filhos com o mesmo nome.")
+        }
+    }
+
+    function atualizar() {
+        var escolaPrivada = filhos.length * 3000;
+        var escolaPublica = filhos.length * 1500;
+
+        custos.innerHTML = `Você tem ${filhos.length} filhos. Seu custo mensal será aproximadamente R${escolaPrivada.toFixed(2)} se colocar eles em escola particular ou R$${escolaPublica.toFixed(2)} se eles estudarem em escola pública`;
+    }
+</script>
+</html>
+
+<!-- 7. Crie um programa em HTML/JS o qual:
+a) Pergunte ao usuário o nome de um filho seu
+b) Ao clicar em "Cadastrar", o nome do filho fica cadastrado num lugar que o usuário não vê, porém NÃO permita o cadastro de nomes repetidos. Em caso de tentativa de nome repetido, exiba um alert com a frase "Não pode mais de 1 filho com o mesmo nome!"
+c) Ao clicar em "Atualizar Família", deve aparecer um texto como este abaixo:
+   Você tem X filhos
+   Seu custo mensal será aproximadamente R$Y se colocar eles em escola particular ou R$Z se eles estudarem em escola pública
+Onde X é a quantidade de filhos cadastrados.
+Y é o resultado do seguinte cálculo: quant de filhos x 3000, com 2 casas decimais.
+Z é o resultado do seguinte cálculo: quant de filhos x 1500, com 2 casas decimais. -->

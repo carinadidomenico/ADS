@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select id="resultados">
+        <option value="">Indique o resultado</option>
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select>
+    <button onclick="pontuacao()">Registrar jogo</button>
+    <div id="campanha"></div>
+    <div>
+        <label>Indique qual jogo que saber resultado
+            <input onkeyup="buscar()" type="number" id="jogo">
+        </label>
+    </div>
+    <div id="resposta"></div>
+</body>
+<script>
+    var pontos = [];
+   
+
+    function pontuacao() {
+        pontos.push(Number(resultados.value));
+        var total = 0;
+        var vitoria = 0;
+        var empate = 0;
+        var derrota = 0;
+
+        for(contador in pontos) {
+
+            if (pontos[contador] == 3) {
+                vitoria ++;
+            } else if (pontos[contador] == 1) {
+                empate++;
+            } else {
+                derrota++;
+            }
+        }
+
+        for(var i = 0; i < pontos.length;i++) {
+            total += pontos[i];
+        }
+
+        var aprov = (total*100)/(pontos.length * 3)
+
+        
+        campanha.innerHTML =
+        `
+            <p>O time teve ${vitoria} vitórias, ${empate} empates e ${derrota} derrotas.</p>
+            <p>Pontuação total: ${total} pontos</p>
+            <p>Aproveitamento: ${aprov.toFixed()}%</p>
+        `
+    }
+
+    function buscar() {
+        var jogos = Number(jogo.value);
+        console.log(pontos)
+
+        for(var numero = 0; numero < jogos; numero++) {
+            if(pontos[jogos] === 3) {
+                resposta.innerHTML = `No ${numero+1}º jogo, o time ganhou`;
+            } else if(pontos[jogos] === 1) {
+                resposta.innerHTML = `No ${numero+1}º jogo, o time empatou`;
+            } else if(pontos[jogos] === 0) {
+                resposta.innerHTML = `No ${numero+1}º jogo, o time perdeu`;
+            } else if(jogos > pontos.length) {
+                resposta.innerHTML = `Não foi cadastrado um ${numero+1}º jogo`;
+            }
+        }
+    }
+</script>
+</html>
+
+<!-- 8 (desafio). Crie um programa em HTML/JS o qual cadastre a campanha de um time de futebol num campeonato da seguinte forma:
+a) Tenha um 'combo' identificado com o texto "Indique o resultado" com os itens:
+     Vitória
+     Empate
+     Derrota
+b) Ao clicar num botão "Registrar jogo", o resultado escolhido em a) é registrado em um local invisível ao usuário e um texto abaixo é exibido (ou atualizado). O texto é como este:
+      O time teve: V vitórias, E empates, D derrotas
+      Pontuação total: X pontos
+      Aproveitamento: Y%
+Onde X é calculado assim: Cada vitória (V) vale 3 pontos. Cada empate (E) vale 1 ponto. Cada derrota (D) vale 0 pontos.
+O Y é o total de pontos conquistados (X) dividido pelo total de pontos possíveis (ou seja, considerando que tivesse vencido todos os jogos) vezes 100.
+
+c) Deve haver um campo "Indique qual jogo que saber resultado". Na medida que vai digitando, aparace um texto, abaixo do texto de b) como este:
+     No 2º jogo, o time Ganhou (ou "Perdeu" ou "Empatou")
+ou um texto como este, caso o valor seja de um jogo que não foi cadastrado:
+     Não foi cadastrado um 9º jogo
+Neste item considere que o usuário ache que 1 indica o 1º jogo. Ou seja, o usuário não imagina que o 1º é o jogo "0" na verdade. -->
