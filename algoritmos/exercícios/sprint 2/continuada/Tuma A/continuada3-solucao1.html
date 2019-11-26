@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Solução 1 da Continuada 3</title>
+</head>
+<body>
+    <h2>Solução 1 da Continuada 3</h2>
+    
+    Nome do astronauta: <input id="nome"> <br>
+    Dias: <input id="dias"> <br>
+    Horas: <input id="horas"> <br>
+    Minutos: <input id="minutos"> <br>
+
+    <br><button onclick="cadastrar()">Registrar viagem</button>
+    <br><button onclick="ver_relatorio()">
+        Relatório de viagens</button>
+
+    <br>
+    <div id="relatorio"></div>
+
+</body>
+</html>
+<script>
+
+var viagens_nomes = []; // só os nomes 
+var viagens_tempos = []; // só os tempos em anos na Terra
+
+function cadastrar() {
+    var valor_dias = Number(dias.value);
+    var valor_horas = Number(horas.value);
+    var valor_minutos = Number(minutos.value);
+
+    // verificando se os tempos estão inválidos ou válidos
+    if (valor_dias<=0 && valor_horas<=0 && valor_minutos<=0) {
+        alert('Informe um tempo de viagem válido!');
+    } else {
+        // entra aqui caso pelo menos 1 dos tempo for > 0
+        viagens_nomes.push(nome.value);
+
+        // converter o tempo total em anos (tempo do astronauta)
+        var anos_astronauta = (valor_dias * 1440 + valor_horas * 60 + valor_minutos) / 525600;
+
+        // tempo, em anos, na Terra
+        var anos_terra = parseInt(anos_astronauta * 45);
+
+        // adicionando o tempo no vetor de tempos
+        viagens_tempos.push(anos_terra);
+    }
+}
+
+function ver_relatorio() {
+    // limpar a div para evitar o acúmulo de resultados
+    relatorio.innerHTML = '';
+
+    // texto inicial do relatório
+    relatorio.innerHTML = `Foram registradas ${viagens_nomes.length} viagens, detalhadas a seguir: <br>`;
+
+    for (var indice=0; indice<viagens_nomes.length; indice++) {
+   
+        // variável para tempo em anos na Terra
+        // porque vamos usar em vários lugares
+        var idade = viagens_tempos[indice];
+
+        // indicação do número da viagem
+        relatorio.innerHTML += `<br>Viagem <b>${indice+1}</b>: <br>`;
+   
+        // texto com o nome do astronauta e o tempo na Terra
+        relatorio.innerHTML += `Astronauta <b>${viagens_nomes[indice]}</b> ficou fora por pelo menos <b>${idade}</b> anos no tempo da Terra.
+   A criança que nasceu quando ele saiu provavelmente está assim: <br>`;
+
+        // descoberta da imagem que deve ser usada
+        var imagem;
+
+        if (idade <= 13) {
+            imagem = 'bart1.jpg';
+        } else if (idade <= 30) {
+            imagem = 'bart2.jpg';
+        } else if (idade <= 65) {
+            imagem = 'bart3.jpg';
+        } else if (idade <= 100) {
+            imagem = 'bart4.jpg';
+        } else {
+            imagem = 'bart5.jpg';
+        }
+
+        // colocando a imagem na div
+        relatorio.innerHTML += `<img src="${imagem}"> <br>`;
+
+    }
+}
+
+</script>

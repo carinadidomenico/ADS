@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Nome do astronauta:
+        <input type="text" id="nomeAstronauta">
+    </div>    
+    <div>
+        Quantos dias:
+        <input type="number" id="diasViagem">
+    </div>    
+    <div>
+        Quantas horas:
+        <input type="number" id="horasViagem">
+    </div>    
+    <div>
+        Quantos minutos:
+        <input type="number" id="minutosViagem">
+    </div>
+    <button onclick="registrar()">Registrar viagem</button>
+    <br>
+    <button onclick="relatorio()">Relatório viagens</button>
+    <div id="relatorios"></div>
+</body>
+<script>
+    
+    var nomes = [];
+    var dias = [];
+    var horas = [];
+    var minutos = [];
+    var tempo = [];
+    
+    function registrar() {        
+        var nome = nomeAstronauta.value;
+        var dia = Number(diasViagem.value)
+        var hora = Number(horasViagem.value);
+        var minuto = Number(minutosViagem.value);
+        
+
+            if (dia > 0 || hora > 0 || minuto > 0) {
+                nomes.push(nome);
+                dias.push (dia);
+                horas.push (hora);
+                minutos.push (minuto);
+            } else {
+                alert("Informe um tempo de viagem válido");
+            }
+        console.log(nome);
+    }
+
+    function relatorio() {
+        var total = dias*1440 + horas * 60 + minutos;
+        tempo.push(total);
+        console.log(total)
+        for(var i = 0; i < tempo.length; i++) {
+            if(tempo[i] <= 13*525600) {
+                relatorios.innerHTML += `
+                <p>O astronauta ${nomeAstronauta[i]} ficou fora pelo menos ${parseInt(tempo[i]/525600).toFixed()}</p>
+                <p>A criança que nasceu quando ele saiu provavelmente está assim</p>            
+                <img src="jovem.png" alt="Jovem">
+                `
+            } 
+            if(tempo[i] > 13*525600 && tempo[i] <=30*525600) {
+                relatorios.innerHTML += `
+                <p>O astronauta ${nomeAstronauta[i]} ficou fora pelo menos ${parseInt(tempo[i]/525600)}</p>
+                <p>A criança que nasceu quando ele saiu provavelmente está assim</p>            
+                <img src="adolescente.png" alt="Adolescente">
+                `
+            } 
+            if(tempo[i] > 30*525600 && tempo <= 65*525600) {
+                relatorios.innerHTML += `
+                <p>O astronauta ${nomeAstronauta[i]} ficou fora pelo menos ${parseInt(tempo[i]/525600)}</p>
+                <p>A criança que nasceu quando ele saiu provavelmente está assim</p>            
+                <img src="adulto.png" alt="Adulto">
+                `
+            } 
+            if(tempo[i] > 65*525600 && tempo[i] <= 110*525600) {
+                relatorios.innerHTML += `
+                <p>O astronauta ${nomeAstronauta[i]} ficou fora pelo menos ${parseInt(tempo[i]/525600)}</p>
+                <p>A criança que nasceu quando ele saiu provavelmente está assim</p>            
+                <img src="idoso.png" alt="Idoso">
+                `
+            } 
+            if(tempo[i] > 110*525600) {
+                relatorios.innerHTML += `
+                <p>O astronauta ${nomeAstronauta[i]} ficou fora pelo menos ${parseInt(tempo[i]/525600)}</p>
+                <p>A criança que nasceu quando ele saiu provavelmente está assim</p>            
+                <img src="idoso2.png" alt="Idoso2">
+                `
+            } 
+            console.log(tempo)
+        }
+    }
+    </script>
+</html>
+
